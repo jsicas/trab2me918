@@ -2,54 +2,78 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = '#>',
-  fig.path = 'man/figures/README-',
-  out.width = '100%'
-)
-```
-
 # trab2me918
+## Introdução
+O pacote em R `trab2me918` tem o objetivo de realizar o ajuste de uma regressão linear, gerando objetos úteis para a sua análise, como os valores dos coeficientes ajustados, resíduos, valores preditos, entre outros. Possui as seguintes funções:
 
-<!-- badges: start -->
-<!-- badges: end -->
+- `banco_exemplo`: contém um banco de dados simulados.
+- `ajusta_beta`: calcula os valores dos coeficientes (betas) de uma regressão linear com variáveis preditoras numéricas.
+- `predicao`: faz predições em um modelo linear para um conjunto de dados.
+- `grafico_pred`: plota gráfico de valores preditos vs. valores obervados.
 
-The goal of trab2me918 is to ...
+## Instalação
 
-## Installation
+O `trab2me918` será mantido apenas no Github. Para utilizar o pacote corretamente, é necessário que o usuário tenha linguagem de programação R na versão 2.10 ou superior. A instalação pode ser feita por meio da função abaixo:
 
-You can install the development version of trab2me918 from [GitHub](https://github.com/) with:
-
-``` r
+```{r, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("jsicas/ME918")
+devtools::install_github("jsicas/trab2me918")
 ```
 
-## Example
+### banco_exemplo
 
-This is a basic example which shows you how to solve a common problem:
+Consiste em um banco de dados simulados com 4 variáveis e 100 observações. É um objeto `data.frame` contendo 3 preditores ($X1$, $X2$ e $X3$) e uma variável resposta ($Y$).
+
+As variáveis foram geradas da seguinte forma:
+
+$$
+\begin{aligned}
+X1 &\sim \mathcal{N}(6, 18^2)\\
+X2 &\sim \mathcal{N}(10, 30^2)\\
+X3 &\sim Exp(5)\\
+Y &= \frac{2}{3} X1 + \frac{5}{2} X2 + X3 + \varepsilon, \;\;\varepsilon \sim \mathcal{N}(0, 7^2)
+\end{aligned}
+$$
+
+### ajusta_beta
+
+Função que calcula os valores dos coeficientes (betas) de uma regressão linear com variáveis preditoras numéricas. Possui os seguintes argumentos:
+
+- `formula`: recebe a fórmula que será utilizada no ajuste do modelo. Deve ser escrita da seguinte maneira: `Variável Resposta ~ Variáveis Preditoras`.
+- `data`: um objeto contendo o banco de dados que será utilizado no ajuste.
+
+### predicao
+
+Função que faz predições em um modelo linear para um conjunto de dados. Possui os seguintes argumentos:
+
+- `model`: objeto de modelo da classe `modelo_linear` cuja predição é desejada.
+- `new_data`: conjunto de preditoras desejado. Deve ser um data frame, cujas colunas têm os nomes das preditoras (deve possuir todas).
+
+### grafico_pred
+
+Função que plota gráfico de valores preditos vs. valores obervados. Possui os seguintes argumentos:
+
+- `model`: objeto de modelo da classe `modelo_linear` cuja predição é desejada.
+- `new_data`: argumento opcional com conjunto de preditoras para usar no gráfico. Deve ser um data frame, cujas colunas têm os nomes das preditoras (deve possuir todas).
+- `file`: argumento opcional com o caminho de onde se quer salvar o gráfico.
+- `width`: argumento opcional com a largura do gráfico em polegadas.
+- `height`: argumento opcional com a altura do gráfico em polegadas.
+
+
+## Exemplo
+
+Podemos fazer a regressão linear múltipla utilizando o `banco_exemplo` disponibilizado no pacote.
 
 ```{r example}
 library(trab2me918)
-## basic example code
+dados <- banco_exemplo
+head(dados) #Primeiras seis observações
+
+modelo <- ajusta_beta(formula = Y ~ X1 + X2 + X3, data = banco_exemplo)
+modelo
+
+predicao(model = modelo, new_data = data.frame(X1 = c(3, 10), X2 = c(7, 23), X3 = c(30, 44)))
+
+grafico_pred(model = modelo, new_data = data.frame(X1 = c(3, 10), X2 = c(7, 23), X3 = c(30, 44)))
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
