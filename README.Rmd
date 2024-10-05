@@ -76,4 +76,3 @@ predicao(model = modelo, new_data = data.frame(X1 = c(3, 10), X2 = c(7, 23), X3 
 
 grafico_pred(model = modelo, new_data = data.frame(X1 = c(3, 10), X2 = c(7, 23), X3 = c(30, 44)))
 ```
-
