@@ -1,0 +1,33 @@
+Package: trab2me918
+Title: Ajusta Modelo De Regressão
+Version: 1.0
+Authors@R:
+  c(
+  person("João Victor", "Rodrigues", email="j236153@dac.unicamp.br",
+         role = c("aut", "cre")),
+  person("Rodrigo", "Caldiron", email="r185416@dac.unicamp.br",
+         role = c("aut")),
+  person("Felipe", "Queiroz", email="f222006@dac.unicamp.br",
+         role = c("aut")),
+  person("Mariana", "Nascimento", email="m204344@dac.unicamp.br",
+         role = c("aut"))
+  )
+Description:
+  Este é um pacote que realiza o ajuste de uma regressão linear. 
+  Além disso, ele gera objetos úteis para o sua análise, como os valores dos
+  coeficientes ajustados, resíduos, valores preditos, entre outros.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+LazyData: true
+Imports:
+  Matrix,
+  ggplot2
+Suggests:
+  testthat,
+  png,
+  visualTest
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
