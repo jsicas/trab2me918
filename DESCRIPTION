@@ -2,15 +2,14 @@ Package: trab2me918
 Title: Ajusta Modelo De Regressão
 Version: 1.0
 Authors@R:
-  c(
-  person("João Victor", "Rodrigues", email="j236153@dac.unicamp.br",
-         role = c("aut", "cre")),
-  person("Rodrigo", "Caldiron", email="r185416@dac.unicamp.br",
-         role = c("aut")),
-  person("Felipe", "Queiroz", email="f222006@dac.unicamp.br",
-         role = c("aut")),
-  person("Mariana", "Nascimento", email="m204344@dac.unicamp.br",
-         role = c("aut"))
+  c(person("João Victor", "Rodrigues", "j236153@dac.unicamp.br",
+           role = c("aut", "cre")),
+    person("Rodrigo", "Caldiron", "r185416@dac.unicamp.br",
+           role = c("aut", "cre")),
+    person("Felipe", "Queiroz", "f222006@dac.unicamp.br",
+           role = c("aut", "cre")),
+    person("Mariana", "Nascimento", "m204344@dac.unicamp.br",
+           role = c("aut", "cre"))
   )
 Description:
   Este é um pacote que realiza o ajuste de uma regressão linear. 
