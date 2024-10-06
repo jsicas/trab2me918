@@ -140,7 +140,7 @@ predicao(model = modelo, new_data = data.frame(X1 = c(3, 10), X2 = c(7, 23), X3 
     ## 2 108.28272
 
 ``` r
-grafico_pred(model = modelo, new_data = data.frame(X1 = c(3, 10), X2 = c(7, 23), X3 = c(30, 44)), file = "exemplo.png", device = 'png')
+grafico_pred(model = modelo, new_data = data.frame(X1 = c(3, 10), X2 = c(7, 23), X3 = c(30, 44)), file = "exemplo.png", width = 5, height = 4, device = 'png')
 ```
 
 ![](exemplo.png)<!-- -->
