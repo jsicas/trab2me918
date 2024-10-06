@@ -15,6 +15,12 @@
 #' @examples
 #' modelo <- ajusta_beta(Y ~ X1 + X2 + X3, data = banco_exemplo)
 #' grafico_pred(modelo)
+#'
+#' new_data <- data.frame(
+#'               X1 = c(-8.5, 10),
+#'               X2 = c(-4.0, -3.5),
+#'               X3 = c(3.2, 4))
+#' grafico_pred(modelo, new_data)
 #
 #' @import ggplot2
 #'
