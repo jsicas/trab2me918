@@ -54,7 +54,7 @@ Função que faz predições em um modelo linear para um conjunto de dados. Poss
 Função que plota gráfico de valores preditos vs. valores obervados. Possui os seguintes argumentos:
 
 - `model`: objeto de modelo da classe `modelo_linear` cuja predição é desejada.
-- `new_data`: argumento opcional com conjunto de preditoras para usar no gráfico. Deve ser um data frame, cujas colunas têm os nomes das preditoras (deve possuir todas).
+- `new_data`: argumento opcional com conjunto de preditoras para usar no gráfico. 
 - `file`: argumento opcional com o caminho de onde se quer salvar o gráfico.
 - `width`: argumento opcional com a largura do gráfico em polegadas.
 - `height`: argumento opcional com a altura do gráfico em polegadas.
