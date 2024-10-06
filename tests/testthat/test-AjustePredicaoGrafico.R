@@ -25,11 +25,11 @@ test_that('Predicao', {
   # verificando predicao via data.frame
   model <- ajusta_beta(Y ~ X1 + X2, banco_teste)
   new_data <- data.frame(Y = c(10, 2), X1 = c(0, 1), X2 = c(4,6))
-  expect_identical(as.numeric(round(predicao(model, new_data)$betas, 10)), c(13,21))
+  expect_identical(as.numeric(round(predicao(model, new_data)$valores_preditos, 10)), c(13,21))
 
   # verificando predicao via matrix
   new_data <- as.matrix(new_data)
-  expect_identical(as.numeric(round(predicao(model, new_data)$betas, 10)), c(13,21))
+  expect_identical(as.numeric(round(predicao(model, new_data)$valores_preditos, 10)), c(13,21))
 })
 
 test_that('Os gráficos gerados são identicos', {
