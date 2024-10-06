@@ -75,8 +75,7 @@ Possui os seguintes argumentos:
 - `model`: objeto de modelo da classe `modelo_linear` cuja predição é
   desejada.
 - `new_data`: argumento opcional com conjunto de preditoras para usar no
-  gráfico. Deve ser um data frame, cujas colunas têm os nomes das
-  preditoras (deve possuir todas).
+  gráfico. 
 - `file`: argumento opcional com o caminho de onde se quer salvar o
   gráfico.
 - `width`: argumento opcional com a largura do gráfico em polegadas.
