@@ -29,5 +29,7 @@ predicao <- function(model, new_data) {
   X <- cbind(rep(1, nrow(new_data)), as.matrix(new_data[,preditores]))
 
   # predicao
-  return(data.frame('valores_preditos' = X %*% model$betas))
+  pred <- data.frame(X %*% model$betas)
+  colnames(pred) <- "valores_preditos"
+  return(pred)
 }
