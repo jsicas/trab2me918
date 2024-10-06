@@ -2,25 +2,38 @@
 % Please edit documentation in R/grafico_pred.R
 \name{grafico_pred}
 \alias{grafico_pred}
-\title{Gráfico de Valores Observados e Preditos}
+\title{Gráfico dos Valores Ajustados e Preditos}
 \usage{
-grafico_pred(model, new_data = NULL, file=NULL, width=7, height=7)
+grafico_pred(model, new_data = NULL, file = NULL, width = 7, height = 7,
+device = 'pdf')
 }
 \arguments{
-\item{model}{um objeto de modelo da classe "modelo_linear" cuja predição é desejada.}
+\item{model}{um objeto da classe "modelo_linear".}
 
-\item{new_data}{argumento opcional com conjunto de preditoras para usar no gráfico.}
+\item{new_data}{argumento opcional com conjunto de novas preditoras para usar no
+gráfico. Elas são representadas por retas verticais.}
 
 \item{file}{argumento opcional com o caminho de onde se quer salvar o gráfico.}
 
 \item{width}{argumento opcional com a largura do gráfico em polegadas.}
 
 \item{height}{argumento opcional com a altura do gráfico em polegadas.}
+
+\item{device}{argumento opcional com fomato em que o arquivo deve ser salvo,
+e.g. 'pdf', 'png', 'jpeg' entre outros. Para mais detalhes, ver
+\link[ggplot2]{ggsave}.}
 }
 \description{
-Plota gráfico de valores preditos vs. valores obervados.
+Plota gráfico de valores preditos vs. valores obervados. Caso sejam adicionados
+novos dados, são plotadas linhas verticais indicando sua posição.
 }
 \examples{
 modelo <- ajusta_beta(Y ~ X1 + X2 + X3, data = banco_exemplo)
 grafico_pred(modelo)
+
+new_data <- data.frame(
+              X1 = c(-8.5, 10),
+              X2 = c(-4.0, -3.5),
+              X3 = c(3.2, 4))
+grafico_pred(modelo, new_data)
 }
