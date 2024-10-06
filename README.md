@@ -80,6 +80,7 @@ Possui os seguintes argumentos:
   gráfico.
 - `width`: argumento opcional com a largura do gráfico em polegadas.
 - `height`: argumento opcional com a altura do gráfico em polegadas.
+- `device`: argumento opcional com o formato em que o gráfico deve ser salvo.
 
 ## Exemplo
 
