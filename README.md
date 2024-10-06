@@ -89,8 +89,8 @@ disponibilizado no pacote.
 
 ``` r
 library(trab2me918)
-dados <- banco_exemplo
-head(dados) #Primeiras seis observações
+data("banco_exemplo")
+head(banco_exemplo) #Primeiras seis observações
 ```
 
     ##           X1        X2         X3          Y
