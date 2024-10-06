@@ -3,13 +3,14 @@
 #' @description
 #' Plota gráfico de valores preditos vs. valores obervados.
 #'
-#' @usage grafico_pred(model, new_data = NULL, file=NULL, width=7, height=7)
+#' @usage grafico_pred(model, new_data = NULL, file=NULL, width=7, height=7, device = 'pdf')
 #'
 #' @param model um objeto de modelo da classe "modelo_linear" cuja predição é desejada.
 #' @param new_data argumento opcional com conjunto de preditoras para usar no gráfico.
 #' @param file argumento opcional com o caminho de onde se quer salvar o gráfico.
 #' @param width argumento opcional com a largura do gráfico em polegadas.
 #' @param height argumento opcional com a altura do gráfico em polegadas.
+#' @param device argumento opcional com o formato em que o gráfico deve ser salvo.
 #'
 #' @examples
 #' modelo <- ajusta_beta(Y ~ X1 + X2 + X3, data = banco_exemplo)
