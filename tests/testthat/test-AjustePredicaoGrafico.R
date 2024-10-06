@@ -19,8 +19,6 @@ test_that('Ajuste de Regressao', {
 
   # verificando problemas de posto de X'X
   expect_error(ajusta_beta(Y ~ X1 + X2 + X3, data=banco_teste))
-
-  # expect_known_output
 })
 
 test_that('Predicao', {
@@ -32,11 +30,11 @@ test_that('Predicao', {
   # verificando predicao via matrix
   new_data <- as.matrix(new_data)
   expect_identical(as.numeric(round(predicao(model, new_data)$betas, 10)), c(13,21))
-
 })
 
 test_that('Os gráficos gerados são identicos', {
   # packages necessarios
+  # devtools::install_github("MangoTheCat/visualTest")
   library(visualTest)
 
   grafico_pred(model_teste, file = 'grafico1.png', device = 'png')
